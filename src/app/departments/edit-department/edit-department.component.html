@@ -1,0 +1,9 @@
+<p>edit-department works!</p>
+
+<app-form-data-department
+  buttonText="Save Changes"
+  [currentName]="department.depname"
+  [currentDescription]="department.depdescription"
+  (onSubmit)="onSubmit(department.id)">
+
+</app-form-data-department>

@@ -1,0 +1,17 @@
+<p>form-data-department works!</p>
+<form action="" class="container" (ngSubmit)="onButtonClicked(buttonText)">
+<!--<form action="" class="container">-->
+<!--  <div class="form-group">-->
+<!--    <label for="exampleId">Department id</label>-->
+<!--    <input type="text" disabled class="form-control" id="exampleId" aria-describedby="emailHelp" [(ngModel)]="id" />-->
+<!--  </div>-->
+  <div class="form-group">
+    <label for="exampleName">Department Name</label>
+    <input type="text" class="form-control" id="exampleName" name="name" [(ngModel)]="depname"/>
+  </div>
+  <div class="form-group">
+    <label for="exampleDescription">Department Description</label>
+    <input type="text" class="form-control" id="exampleDescription" name="description" [(ngModel)]="depdescription"/>
+  </div>
+  <button type="submit" class="btn btn-primary">{{ buttonText }}</button>
+</form>
