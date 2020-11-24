@@ -8,4 +8,6 @@ export interface Employee {
 export interface Department {
   id: number;
   depname: string;
+  depdescription: string;
+  depimg: string;
 }

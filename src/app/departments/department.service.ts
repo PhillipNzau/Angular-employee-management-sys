@@ -14,7 +14,6 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class DepartmentService {
-
   constructor(
     private http: HttpClient,
 

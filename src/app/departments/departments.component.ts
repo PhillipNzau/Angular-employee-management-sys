@@ -10,6 +10,7 @@ import { DepartmentService } from './department.service';
 export class DepartmentsComponent implements OnInit {
   departments: Department[] = [];
   displayedColumns: string[] = ['id', 'name'];
+  isLoading = true;
   constructor(
     // tslint:disable-next-line:variable-name
     private _departmentService: DepartmentService,
@@ -19,6 +20,7 @@ export class DepartmentsComponent implements OnInit {
     this._departmentService.getDepartments()
       .subscribe(data => {
         this.departments = data;
+        this.isLoading = false;
       });
   }
 

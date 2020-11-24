@@ -11,6 +11,9 @@ import { DepartmentDetailComponent } from './departments/department-detail/depar
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatProgressSpinner, MatProgressSpinnerModule, MatSpinner} from '@angular/material/progress-spinner';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -20,6 +23,7 @@ import {MatButtonModule} from '@angular/material/button';
     DepartmentsComponent,
     PageNotFoundComponent,
     DepartmentDetailComponent,
+    NavBarComponent,
     // routingComponents,
   ],
   imports: [
@@ -28,7 +32,10 @@ import {MatButtonModule} from '@angular/material/button';
     HttpClientModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatButtonModule
+    MatButtonModule,
+    // MatProgressSpinner,
+    MatCardModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
