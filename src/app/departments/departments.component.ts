@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Department } from '../types';
 import { DepartmentService } from './department.service';
+import {ActivatedRoute, Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-departments',
@@ -13,17 +15,20 @@ export class DepartmentsComponent implements OnInit {
   isLoading = true;
 
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     // tslint:disable-next-line:variable-name
     private _departmentService: DepartmentService,
+
   ) {
   }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
     this._departmentService.getDepartments()
       .subscribe(data => {
         this.departments = data;
         this.isLoading = false;
-
       });
 
     // @ts-ignore
@@ -39,4 +44,5 @@ export class DepartmentsComponent implements OnInit {
       }
     });
   }
+
 }

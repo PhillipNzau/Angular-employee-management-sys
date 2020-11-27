@@ -1,1 +1,49 @@
 <p>employees works!</p>
+
+<div class="container-fluid">
+  <div class="contianer" >
+    <table class="table">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">first name</th>
+        <th scope="col">last name</th>
+        <th scope="col">phone number</th>
+      </tr>
+      </thead>
+      <tbody *ngIf="!isLoading">
+      <tr *ngFor="let employee of employees | paginate: { id: 'listing_pagination',
+          itemsPerPage: 10,
+          currentPage: page,
+          totalItems: totalRecords
+        }" routerLink="/employees/{{employee.id}}">
+        <td scope="row">{{employee.id}}</td>
+        <td>
+          {{employee.firstname}}
+        </td>
+        <td>
+          {{employee.lastname}}
+        </td>
+        <td>
+          {{employee.phone}}
+        </td>
+      </tr>
+      </tbody>
+
+    </table>
+    <div>
+      <pagination-controls
+        id="listing_pagination"
+        maxSize="5"
+        directionLinks="true"
+        (pageChange)="page = $event"
+        autoHide="true"
+        responsive="true"></pagination-controls>
+    </div>
+  </div>
+
+  <div class="container" *ngIf="isLoading">
+    <mat-progress-spinner diameter="70" strokeWidth="5" color="warn" class="pt-3" style="margin: 0 auto;" value="75"  mode="indeterminate"></mat-progress-spinner>
+    <h5 class="text" style="margin: 0 auto;">Loading...</h5>
+  </div>
+</div>

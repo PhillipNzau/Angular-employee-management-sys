@@ -14,7 +14,9 @@
       <tbody *ngIf="!isLoading">
       <tr *ngFor="let department of departments" routerLink="/departments/{{department.id}}">
         <th scope="row">{{department.id}}</th>
-        <td>{{department.depname}}</td>
+        <td>
+          {{department.depname}}
+        </td>
       </tr>
       </tbody>
 

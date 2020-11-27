@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from '../types';
+import {ActivatedRoute, Router} from '@angular/router';
+import {EmployeeService} from './employee.service';
 
 @Component({
   selector: 'app-employees',
@@ -6,10 +9,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
+  isLoading = true;
+  employees: Employee[] = [];
+  displayedColumns: string[] = ['id', 'name'];
+  // tslint:disable-next-line:ban-types
+  page: Number = 1;
+  totalRecords: number;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    // tslint:disable-next-line:variable-name
+    private _employeeService: EmployeeService,
+  ) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    this._employeeService.getEmployees()
+      .subscribe(data => {
+        this.employees = data;
+        this.totalRecords = data.length;
+        this.isLoading = false;
+      });
   }
 
 }

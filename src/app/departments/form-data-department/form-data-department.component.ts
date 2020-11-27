@@ -62,6 +62,8 @@ export class FormDataDepartmentComponent implements OnInit, OnChanges {
         console.log(response);
       });
       this.router.navigateByUrl('/departments');
+    }
+    else {
 
     }
 

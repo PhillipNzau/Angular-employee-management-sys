@@ -40,4 +40,13 @@ export class DepartmentService {
     const url = `https://5fa92ae0c9b4e90016e6a1db.mockapi.io/api/v1/department/${id}`;
     return this.http.put<Department>(url, payload, httpOptions);
   }
+  addDepartment(payload: object): Observable<{}> {
+    const url = `https://5fa92ae0c9b4e90016e6a1db.mockapi.io/api/v1/department/`;
+    return this.http.post<Department>(url,  payload, httpOptions);
+  }
+
+  // tslint:disable-next-line:typedef
+  changeStatus(b: boolean) {
+
+  }
 }

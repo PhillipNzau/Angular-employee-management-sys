@@ -14,7 +14,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinner, MatProgressSpinnerModule, MatSpinner} from '@angular/material/progress-spinner';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-
+import { EditDepartmentComponent } from './departments/edit-department/edit-department.component';
+import { FormDataDepartmentComponent } from './departments/form-data-department/form-data-department.component';
+import {FormsModule} from '@angular/forms';
+import { AddDepartmentComponent } from './departments/add-department/add-department.component';
+import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 
 @NgModule({
   declarations: [
@@ -24,6 +28,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     PageNotFoundComponent,
     DepartmentDetailComponent,
     NavBarComponent,
+    EditDepartmentComponent,
+    FormDataDepartmentComponent,
+    AddDepartmentComponent,
     // routingComponents,
   ],
   imports: [
@@ -36,6 +43,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     // MatProgressSpinner,
     MatCardModule,
     MatProgressSpinnerModule,
+    FormsModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
