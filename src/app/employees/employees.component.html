@@ -1,17 +1,17 @@
-<p>employees works!</p>
 
 <div class="container-fluid">
-  <div class="contianer" >
+  <h2 class="text-center border-bottom"> All Employees</h2>
+  <div class="contianer" *ngIf="!isLoading">
     <table class="table">
       <thead class="thead-light">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">first name</th>
-        <th scope="col">last name</th>
-        <th scope="col">phone number</th>
+        <th scope="col">Emp id</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Phone number</th>
       </tr>
       </thead>
-      <tbody *ngIf="!isLoading">
+      <tbody >
       <tr *ngFor="let employee of employees | paginate: { id: 'listing_pagination',
           itemsPerPage: 10,
           currentPage: page,
@@ -31,7 +31,7 @@
       </tbody>
 
     </table>
-    <div>
+    <div class="text-center">
       <pagination-controls
         id="listing_pagination"
         maxSize="5"
@@ -42,8 +42,10 @@
     </div>
   </div>
 
+
   <div class="container" *ngIf="isLoading">
     <mat-progress-spinner diameter="70" strokeWidth="5" color="warn" class="pt-3" style="margin: 0 auto;" value="75"  mode="indeterminate"></mat-progress-spinner>
     <h5 class="text" style="margin: 0 auto;">Loading...</h5>
   </div>
 </div>
+
