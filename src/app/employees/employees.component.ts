@@ -16,6 +16,9 @@ export class EmployeesComponent implements OnInit {
   page: Number = 1;
   totalRecords: number;
 
+  pagStyle = 'not-active';
+
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -33,4 +36,14 @@ export class EmployeesComponent implements OnInit {
       });
   }
 
+  // tslint:disable-next-line:typedef
+  onPrint() {
+    window.print();
+  }
+
+  // tslint:disable-next-line:typedef
+  onClear() {
+    this.employees = [];
+    this.pagStyle = 'active';
+  }
 }
