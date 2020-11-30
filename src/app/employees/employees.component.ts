@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../types';
+import { EmployeeService } from './employee.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {EmployeeService} from './employee.service';
+
 
 @Component({
   selector: 'app-employees',
@@ -9,13 +10,13 @@ import {EmployeeService} from './employee.service';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
-  isLoading = true;
   employees: Employee[] = [];
-  displayedColumns: string[] = ['id', 'name'];
+  displayedColumns: string[] = ['id', 'firstname', 'lastname', 'phone'];
+  isLoading = true;
+  term: any;
   // tslint:disable-next-line:ban-types
   page: Number = 1;
   totalRecords: number;
-
   pagStyle = 'not-active';
 
 
@@ -24,26 +25,24 @@ export class EmployeesComponent implements OnInit {
     private router: Router,
     // tslint:disable-next-line:variable-name
     private _employeeService: EmployeeService,
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this._employeeService.getEmployees()
       .subscribe(data => {
         this.employees = data;
-        this.totalRecords = data.length;
+        // this.totalRecords = data.length;
         this.isLoading = false;
       });
   }
-
-  // tslint:disable-next-line:typedef
-  onPrint() {
-    window.print();
-  }
-
   // tslint:disable-next-line:typedef
   onClear() {
     this.employees = [];
     this.pagStyle = 'active';
+  }
+  // tslint:disable-next-line:typedef
+  onPrint() {
+    window.print();
   }
 }

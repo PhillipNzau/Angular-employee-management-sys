@@ -18,7 +18,8 @@ import { EditDepartmentComponent } from './departments/edit-department/edit-depa
 import { FormDataDepartmentComponent } from './departments/form-data-department/form-data-department.component';
 import {FormsModule} from '@angular/forms';
 import { AddDepartmentComponent } from './departments/add-department/add-department.component';
-import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import {NgxPaginationModule} from 'ngx-pagination';
+import {Ng2SearchPipeModule} from 'ng2-search-filter'; // <-- import the module
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
     MatProgressSpinnerModule,
     FormsModule,
     NgxPaginationModule,
+    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

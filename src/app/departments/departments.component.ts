@@ -13,6 +13,12 @@ export class DepartmentsComponent implements OnInit {
   departments: Department[] = [];
   displayedColumns: string[] = ['id', 'name'];
   isLoading = true;
+  term: any;
+  // tslint:disable-next-line:ban-types
+  page: Number = 1;
+  totalRecords: number;
+  pagStyle = 'not-active';
+
 
   constructor(
     private route: ActivatedRoute,
@@ -20,8 +26,7 @@ export class DepartmentsComponent implements OnInit {
     // tslint:disable-next-line:variable-name
     private _departmentService: DepartmentService,
 
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -45,4 +50,15 @@ export class DepartmentsComponent implements OnInit {
     });
   }
 
+  // tslint:disable-next-line:typedef
+  onClear() {
+    this.departments = [];
+    this.pagStyle = 'active';
+  }
+
+  // tslint:disable-next-line:typedef
+  onPrint() {
+    window.print();
+
+  }
 }
