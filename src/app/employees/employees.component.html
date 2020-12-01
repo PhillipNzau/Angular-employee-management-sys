@@ -13,12 +13,12 @@
 <div class="container-fluid ">
   <h2 class="text-center border-bottom"> All Employees</h2>
   <div class="container" *ngIf="!isLoading">
-    <div class="container pb-3">
+    <div class="container pb-3 search">
       <input class="form-control mr-sm-1" type="search" placeholder="Search Table Data" aria-label="Search" [(ngModel)]="term">
     </div>
     <table class="table">
-      <thead class="thead-light">
-      <tr>
+      <thead class="">
+      <tr class="vendorListHeading">
         <th scope="col">Emp id</th>
         <th scope="col">First name</th>
         <th scope="col">Last name</th>
@@ -44,6 +44,14 @@
         </td>
       </tr>
       </tbody>
+      <thead>
+      <tr class="vendorListHeading" >
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>8teq</th>
+      </tr>
+      </thead>
 
     </table>
    <!--hidden on button click-->

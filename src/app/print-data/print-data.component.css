@@ -1,0 +1,10 @@
+.header {
+background-color: var(--main-color);
+}
+.content {
+
+}
+.footer {
+  background-color: var(--main-bg-color);
+  color: white;
+}

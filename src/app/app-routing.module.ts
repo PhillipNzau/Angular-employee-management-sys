@@ -5,6 +5,7 @@ import {DepartmentsComponent} from './departments/departments.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {DepartmentDetailComponent} from './departments/department-detail/department-detail.component';
 import {EditDepartmentComponent} from './departments/edit-department/edit-department.component';
+import {PrintDataComponent} from './print-data/print-data.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/employees', pathMatch: 'full'},
@@ -12,9 +13,8 @@ const routes: Routes = [
   {path: 'departments', component: DepartmentsComponent},
   {path: 'departments/:id', component: DepartmentDetailComponent},
   {path: 'edit-department/:id', component: EditDepartmentComponent},
+  {path: 'print', component: PrintDataComponent},
   {path: '**', component: PageNotFoundComponent},
-
-
 ];
 
 @NgModule({

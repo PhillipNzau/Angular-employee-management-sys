@@ -11,3 +11,8 @@ export interface Department {
   depdescription: string;
   depimg: string;
 }
+export interface Blog {
+  bimg: string;
+  title: string;
+  body: string;
+}
