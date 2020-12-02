@@ -19,7 +19,8 @@ import { FormDataDepartmentComponent } from './departments/form-data-department/
 import {FormsModule} from '@angular/forms';
 import { AddDepartmentComponent } from './departments/add-department/add-department.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-import {Ng2SearchPipeModule} from 'ng2-search-filter'; // <-- import the module
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import { BlogsComponent } from './blogs/blogs.component'; // <-- import the module
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter'; // <-- import the module
     EditDepartmentComponent,
     FormDataDepartmentComponent,
     AddDepartmentComponent,
+    BlogsComponent,
     // routingComponents,
   ],
   imports: [
