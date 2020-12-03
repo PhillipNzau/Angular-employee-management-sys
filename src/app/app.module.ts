@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import {AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeesComponent } from './employees/employees.component';
@@ -21,6 +20,17 @@ import { AddDepartmentComponent } from './departments/add-department/add-departm
 import {NgxPaginationModule} from 'ngx-pagination';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import { BlogsComponent } from './blogs/blogs.component'; // <-- import the module
+import { environment } from '../environments/environment';
+
+// import firebase module
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import { LoginComponent } from './auth/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { UserinfoComponent } from './auth/userinfo/userinfo.component';
+import {LoginComponent} from './auth/login/login.component';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -34,11 +44,17 @@ import { BlogsComponent } from './blogs/blogs.component'; // <-- import the modu
     FormDataDepartmentComponent,
     AddDepartmentComponent,
     BlogsComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserinfoComponent,
     // routingComponents,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatSliderModule,
@@ -49,6 +65,7 @@ import { BlogsComponent } from './blogs/blogs.component'; // <-- import the modu
     FormsModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
