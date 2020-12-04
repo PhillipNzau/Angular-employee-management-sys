@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row justify-content-center">
-
-<!--    <p class="text-danger" *ngIf="errorMessage.length > 0">{{errorMessage}}</p>-->
-<!--    <p class="text-danger" *ngIf="error.message.length > 0">{{error.message}}</p>-->
-
     <div class="col-md-6">
-      <form action="" (ngSubmit)="register()">
+      <form action="" (ngSubmit)="signup()">
         <div class="form-group">
           <h3>Firebase Register</h3>
-          <input type="email" name="email" class="form-control" placeholder="Enter Email" required [(ngModel)]="email">
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
+                 required
+                 [(ngModel)]="email">
         </div>
         <div class="form-group">
-          <input type="password" name="password" class="form-control" placeholder="Enter Password" required [(ngModel)]="password">
+          <input type="password" name="password" class="form-control" placeholder="Enter Password"
+                 required  minlength="6"
+                 [(ngModel)]="password">
         </div>
         <div class="form-group">
           <button class="btn btn-primary" type="submit" >Register</button>
@@ -19,12 +19,8 @@
             <a href="" routerLink="/login">Back to Login</a>
           </div>
         </div>
+        <p class="text-danger" *ngIf="this.authService.message">{{this.authService.message}}</p>
       </form>
-<!--      <div class="form-group">-->
-<!--        <p *ngIf="errorMessage.length > 0" class="text-danger">{{errorMessage}}</p>-->
-<!--        <p *ngIf="error.message.length > 0" class="text-danger">{{error.message}}</p>-->
-<!--        <p *ngIf="message.length > 0" class="text-info">{{message}}</p>-->
-<!--      </div>-->
     </div>
   </div>
 </div>

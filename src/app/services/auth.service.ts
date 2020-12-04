@@ -7,6 +7,9 @@ import {Router} from '@angular/router';
 })
 export class AuthService {
   authState: any = null;
+  message: string;
+  message2: string;
+  user: string;
 
   constructor(
     private afu: AngularFireAuth,
@@ -18,14 +21,27 @@ export class AuthService {
   }
 
   // tslint:disable-next-line:typedef
-  registerwithEmail(email: string, password: string) {
-    this.afu.createUserWithEmailAndPassword(email, password).then((user) => {
-      this.authState = user;
-      return [''];
-    }).catch(error => {
-      console.log(error);
-      throw error;
+  signup(email: string, password: string) {
+    this.afu.createUserWithEmailAndPassword(email, password)
+      .then(user => {
+        this.authState = user;
+        this.router.navigate(['/userinfo']);
+      }).catch(err => {
+        this.message = ( err.message);
+        if (password.length < 6) {
+          this.message = ( err.message);
+        }
     });
   }
-
+  // tslint:disable-next-line:typedef
+  login(email: string, password: string) {
+    this.afu.signInWithEmailAndPassword(email, password)
+      .then(user => {
+        this.authState = user;
+        console.log('Nice, it worked!');
+      })
+      .catch(err => {
+        console.log('Something went wrong:', err.message);
+      });
+  }
 }
