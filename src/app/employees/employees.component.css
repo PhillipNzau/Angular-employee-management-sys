@@ -13,6 +13,9 @@
   .search {
     display: none;
   }
+  .vis-pag{
+    display: none;
+  }
 }
 
 @media print {

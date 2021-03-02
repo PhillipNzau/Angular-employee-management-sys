@@ -10,6 +10,7 @@ export class AuthService {
   message: string;
   message2: string;
   user: string;
+  loggedIn = false;
 
   constructor(
     private afu: AngularFireAuth,
@@ -38,6 +39,7 @@ export class AuthService {
     this.afu.signInWithEmailAndPassword(email, password)
       .then(user => {
         this.authState = user;
+        this.loggedIn = true;
         console.log('Nice, it worked!');
       })
       .catch(err => {
