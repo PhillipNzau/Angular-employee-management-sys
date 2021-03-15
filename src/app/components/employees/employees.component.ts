@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from '../types';
+import { Employee } from '../../types';
 import { EmployeeService } from './employee.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import html2canvas from 'html2canvas';

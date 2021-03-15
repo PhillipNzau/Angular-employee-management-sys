@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import {Employee} from '../types';
+import {Employee} from '../../types';
 
 const httpOptions = {
   headers: new HttpHeaders({

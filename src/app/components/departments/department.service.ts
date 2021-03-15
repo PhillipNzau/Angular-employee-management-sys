@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import {Department} from '../types';
+import {Department} from '../../types';
 
 
 const httpOptions = {
