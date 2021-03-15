@@ -1,0 +1,35 @@
+@media print {
+  *, *:before, *:after {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  .print {
+    visibility: hidden;
+  }
+  .clear {
+    visibility: hidden;
+  }
+  .search {
+    display: none;
+  }
+  .vis-pag{
+    display: none;
+  }
+}
+
+@media print {
+  .vendorListHeading th{
+    background-color: #1a4567 !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+}
+/*hide and activate pagination on button click*/
+.active {
+  visibility: hidden;
+}
+.not-active {
+  visibility: visible;
+}
+

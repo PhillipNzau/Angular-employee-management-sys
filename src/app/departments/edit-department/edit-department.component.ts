@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import {Department} from '../../types';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {DepartmentService} from '../department.service';
 
 @Component({
-  selector: 'app-department-detail',
-  templateUrl: './department-detail.component.html',
-  styleUrls: ['./department-detail.component.css']
+  selector: 'app-edit-department',
+  templateUrl: './edit-department.component.html',
+  styleUrls: ['./edit-department.component.css']
 })
-export class DepartmentDetailComponent implements OnInit {
+export class EditDepartmentComponent implements OnInit {
   department: Department;
+
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     // tslint:disable-next-line:variable-name
     private _departmentService: DepartmentService,
     // tslint:disable-next-line:variable-name
-    private _deleteService: DepartmentService,
+    private _editService: DepartmentService,
   ) { }
 
   ngOnInit(): void {
@@ -26,12 +28,13 @@ export class DepartmentDetailComponent implements OnInit {
       });
   }
 
+
   // tslint:disable-next-line:typedef
-  deleteDepartmentById(id: any) {
+  onSubmit(id: any) {
     console.log(id);
-    this._deleteService.deleteDepartmentById(id)
-      .subscribe();
-    alert(`Deleting your department with id ${id}`);
-    this.ngOnInit();
+    // this._editService.editDepartmentById(id).subscribe();
+    this._editService.changeStatus(false);
+    this.router.navigateByUrl('/departments');
+
   }
 }

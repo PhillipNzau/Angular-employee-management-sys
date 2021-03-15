@@ -1,0 +1,29 @@
+
+<div class="container">
+  <h2 class="text-center border-bottom"> All Blogs</h2>
+  <div class="row">
+    <div class="col-lg-2 col-md-4 col-sm-6 p-3" *ngFor="let blog of blogs | paginate: { id: 'listing_pagination',
+          itemsPerPage: 12,
+          currentPage: page,
+          totalItems: totalRecords
+        }" >
+      <img class="card-img-top img-fluid shadow-lg" src="{{blog.bimg}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{blog.title}}</h5>
+        <p class="card-text">{{blog.body}}</p>
+        <!--      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+      </div>
+    </div>
+  </div>
+  <!--hidden on button click-->
+  <div class="text-center pb-3" [ngClass]="pagStyle">
+    <pagination-controls
+      id="listing_pagination"
+      maxSize="5"
+      directionLinks="true"
+      (pageChange)="page = $event"
+      autoHide="true"
+      responsive="true"></pagination-controls>
+  </div>
+
+</div>

@@ -1,0 +1,8 @@
+<p>add-department works!</p>
+<app-form-data-department
+  buttonText="Add Department"
+  [currentName]="department.depname"
+  [currentDescription]="department.depdescription"
+  (onSubmit)="onSubmit(department.id)">
+
+</app-form-data-department>
