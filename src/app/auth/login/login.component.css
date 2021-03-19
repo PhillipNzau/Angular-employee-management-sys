@@ -33,6 +33,7 @@
 
 .login-button:focus{
   background-color: #569cda;
+  box-shadow: none;
 }
 .login-button{
   margin-top: 20px;

@@ -10,4 +10,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   width: 300px;
   transition: ease 0.5s;
 }
+.custom-input:focus{
+  box-shadow: none;
+}
 
