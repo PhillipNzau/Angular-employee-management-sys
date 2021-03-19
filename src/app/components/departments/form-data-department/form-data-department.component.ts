@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Department} from '../../types';
+import {Department} from '../../../types';
 import {DepartmentService} from '../department.service';
 
 @Component({

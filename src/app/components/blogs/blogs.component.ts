@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Blog} from '../types';
+import {Blog} from '../../types';
 import {ActivatedRoute, Router} from '@angular/router';
 // @ts-ignore
-import * as sampledata from '../ghafla.json';
+import * as sampledata from '../../ghafla.json';
 
 @Component({
   selector: 'app-blogs',

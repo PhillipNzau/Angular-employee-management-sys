@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import {Blog} from '../types';
+import {Blog} from '../../types';
 import {Observable} from 'rxjs';
 // import * as sampledata from '../ghafla.json';
 

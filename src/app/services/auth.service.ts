@@ -40,6 +40,7 @@ export class AuthService {
       .then(user => {
         this.authState = user;
         this.loggedIn = true;
+        this.router.navigate(['dashboard']);
         console.log('Nice, it worked!');
       })
       .catch(err => {
