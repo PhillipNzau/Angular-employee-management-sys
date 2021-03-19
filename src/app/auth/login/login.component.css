@@ -30,14 +30,7 @@
 
 
 }
-.custom-input {
-  background: transparent;
-  border: none ;
-  box-shadow: none;
-  border-radius: 0;
-  width: 300px;
-  transition: ease 0.5s;
-}
+
 .login-button:focus{
   background-color: #569cda;
 }
