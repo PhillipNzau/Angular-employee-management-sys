@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {AuthService} from '../../services/auth.service';
 
@@ -11,9 +11,15 @@ export class NavBarComponent implements OnInit {
   isLoggedIn$: Observable<boolean>;
 
   constructor(
-  ) { }
+    public authService: AuthService,
+  ) {
+  }
 
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line:typedef
+  logout() {
+
+  }
 }

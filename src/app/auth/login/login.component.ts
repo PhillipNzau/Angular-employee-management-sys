@@ -8,6 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  fieldTextType: boolean;
   email: string;
   password: string;
 
@@ -19,10 +20,14 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   // tslint:disable-next-line:typedef
-  login() {
-    this.authService.login(this.email, this.password);
-    this.email = this.password = '';
-
+  // login() {
+  //   this.authService.login(this.email, this.password);
+  //   this.email = this.password = '';
+  //
+  // }
+  // tslint:disable-next-line:typedef
+  toggleFieldTextType() {
+    this.fieldTextType = !this.fieldTextType;
   }
 
 }

@@ -1,17 +1,20 @@
-<p>form-data-department works!</p>
-<form action="" class="container" (ngSubmit)="onButtonClicked(buttonText)">
-<!--<form action="" class="container">-->
-<!--  <div class="form-group">-->
-<!--    <label for="exampleId">Department id</label>-->
-<!--    <input type="text" disabled class="form-control" id="exampleId" aria-describedby="emailHelp" [(ngModel)]="id" />-->
-<!--  </div>-->
-  <div class="form-group">
-    <label for="exampleName">Department Name</label>
-    <input type="text" class="form-control" id="exampleName" name="name" [(ngModel)]="depname"/>
-  </div>
-  <div class="form-group">
-    <label for="exampleDescription">Department Description</label>
-    <input type="text" class="form-control" id="exampleDescription" name="description" [(ngModel)]="depdescription"/>
-  </div>
-  <button type="submit" class="btn btn-primary">{{ buttonText }}</button>
-</form>
+<div class="container">
+  <form action="" class="container w-75 card p-3 form-data" (ngSubmit)="onButtonClicked(buttonText)">
+  <!--<form action="" class="container">-->
+  <!--  <div class="form-group">-->
+  <!--    <label for="exampleId">Department id</label>-->
+  <!--    <input type="text" disabled class="form-control" id="exampleId" aria-describedby="emailHelp" [(ngModel)]="id" />-->
+  <!--  </div>-->
+    <h1 class="d-flex justify-content-center title">Edit Department Details</h1>
+    <div class="form-group mb-3 form-data">
+      <label for="exampleName"><h5>Name</h5></label>
+      <input type="text" class="form-control custom-input" id="exampleName" name="name" [(ngModel)]="depname"/>
+    </div>
+    <div class="form-group mb-3 form-data">
+      <label for="exampleDescription"><h5>Description</h5></label>
+      <input type="text" class="form-control custom-input" id="exampleDescription" name="description" [(ngModel)]="depdescription"/>
+    </div>
+    <button type="submit" class="btn btn-primary">{{ buttonText }}</button>
+  </form>
+  <i routerLink="../../departments" class="fas fa-arrow-left fa-2x"></i>
+</div>

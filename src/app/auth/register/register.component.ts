@@ -18,9 +18,9 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
   // tslint:disable-next-line:typedef
-  signup() {
-    this.authService.signup(this.email, this.password);
-    this.email = this.password = '';
-  }
+  // signup() {
+  //   this.authService.signup(this.email, this.password);
+  //   this.email = this.password = '';
+  // }
 
 }
