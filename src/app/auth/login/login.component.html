@@ -13,23 +13,23 @@
       <img src="assets/man.jpg" alt="Somethings wrong" class="img-fluid">
     </div>
     <div class="col-sm-6" style="margin-top: 15px">
-      <form (ngSubmit)="login()" >
+      <form >
         <h3>Please Login</h3>
         <div class="form-group">
           <span class="input-container">
             <i class="fas fa-envelope" style="margin-top: 12px"></i>
-            <input type="email" name="email" class="form-control custom-input" placeholder="Enter Email" required [(ngModel)]="email">
+            <input type="email" name="email" class="form-control custom-input" placeholder="Enter Email" #email required>
           </span>
         </div>
         <div class="form-group mt-3">
           <span class="input-container">
             <i class="fas fa-lock fa-pull-left" style="margin-top: 12px"></i>
-            <input [type]="fieldTextType ? 'text' : 'password'" name="password" class="form-control custom-input" placeholder="Enter Password" required [(ngModel)]="password">
+            <input [type]="fieldTextType ? 'text' : 'password'" name="password" class="form-control custom-input" placeholder="Enter Password" #password required>
             <i class="fas fa-pull-right" [ngClass]="{ 'fa-eye-slash': !fieldTextType, 'fa-eye': fieldTextType }" (click)="toggleFieldTextType()" style="margin-top: 12px" ></i>
           </span>
         </div>
         <div class="form-group mt-3">
-          <button class="btn btn-primary login-button" type="submit" >Login</button>
+          <button class="btn btn-primary login-button" type="submit"  (click)="authService.SignIn(email.value, password.value)">Login</button>
           <div class="register" style="margin-top: 30px">
             <a href="" routerLink="/register">New User Register</a>
           </div>

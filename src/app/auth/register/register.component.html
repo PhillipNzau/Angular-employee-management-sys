@@ -1,25 +1,26 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <form action="" (ngSubmit)="signup()">
-        <div class="form-group">
-          <h3>Firebase Register</h3>
-          <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
-                 required
-                 [(ngModel)]="email">
+  <div class="row justify-content-center login-container">
+    <div class="col-md-6 p-3">
+      <img src="assets/man.jpg" alt="Somethings wrong" class="img-fluid">
+    </div>
+    <div class="col-md-6 p-3" style="margin-top: 15px">
+      <form>
+        <h3>Please Register</h3>
+        <div class="form-group input-container">
+          <input type="email" id="email" name="email" class="form-control custom-input " placeholder="Enter Email" #userEmail required>
         </div>
-        <div class="form-group">
-          <input type="password" name="password" class="form-control" placeholder="Enter Password"
-                 required  minlength="6"
-                 [(ngModel)]="password">
+        <div class="form-group input-container mt-3">
+          <input type="password" name="password" class="form-control custom-input" placeholder="Enter Password" minlength="6"  #userPassword required>
         </div>
-        <div class="form-group">
-          <button class="btn btn-primary" type="submit" >Register</button>
+        <div class="form-group mt-3">
+          <button class="btn btn-primary login-button" type="submit" (click)="authService.SignUp(userEmail.value, userPassword.value)">Register</button>
           <div class="register">
             <a href="" routerLink="/login">Back to Login</a>
           </div>
         </div>
-        <p class="text-danger" *ngIf="this.authService.message">{{this.authService.message}}</p>
+        <div class="">
+          <p class="text-danger" *ngIf="this.authService.message">{{this.authService.message}}</p>
+        </div>
       </form>
     </div>
   </div>

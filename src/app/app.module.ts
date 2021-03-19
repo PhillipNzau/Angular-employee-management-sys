@@ -32,6 +32,9 @@ import { UserinfoComponent } from './auth/userinfo/userinfo.component';
 import {LoginComponent} from './auth/login/login.component';
 import {CommonModule} from '@angular/common';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {AuthService} from './services/auth.service';
+import {SecureInnerPagesGuard} from './auth/guard/secure-inner-pages.guard';
+import {AuthGuard} from './auth/guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     Ng2SearchPipeModule,
     CommonModule,
   ],
-  providers: [],
+  providers: [AuthService, SecureInnerPagesGuard, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,7 +10,9 @@ import {AuthService} from '../../services/auth.service';
 export class NavBarComponent implements OnInit {
   isLoggedIn$: Observable<boolean>;
 
-  constructor() {
+  constructor(
+    public authService: AuthService,
+  ) {
   }
 
   ngOnInit(): void {
